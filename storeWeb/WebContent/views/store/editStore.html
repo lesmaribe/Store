@@ -1,0 +1,36 @@
+<div class="modal-dialog">
+	<!-- Modal content-->
+	<div class="modal-content">
+		<div class="modal-header">
+        	<div class="modal-title">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Edit Store {{editedStore.code}}</h4>
+			</div>
+       	</div>
+    	<form role="form" name="editform" class="form-horizontal ng-dirty ng-valid ng-valid-required" novalidate>
+			<div class="modal-body">
+        		<div class="row">
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="code">Code</label>
+			    		<div class="col-sm-10" ng-class="{myError: editform.code.$invalid}">
+			    			<input name="code" ng-model="editedStore.code" type="text" ng-disabled="true" class="form-control ng-dirty ng-valid ng-valid-required" placeholder="store code" required>
+			    			<span ng-show="editform.code.$dirty &amp;&amp; editform.code.$invalid" class="help-inline ng-hide"><i>store code required</i></span>
+			    		</div>
+					</div>
+			
+					<div class="form-group">
+			    		<label class="control-label col-sm-2" for="name">Name</label>
+			    		<div class="col-sm-10" ng-class="{myError: editform.name.$invalid}">
+			    			<input name="name" ng-model="editedStore.name" type="text" class="form-control ng-dirty ng-valid ng-valid-required" placeholder="store name" required>
+			    			<span ng-show="editform.name.$dirty &amp;&amp; editform.name.$invalid" class="help-inline ng-hide"><i>store name required</i></span>
+			    		</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group modal-footer">
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancel</button>
+			    <button data-dismiss="modal" ng-click="savestore(editedStore)" ng-disabled="editform.$invalid" class="btn btn-success btn-sm ng-binding" data-dismiss="modal">Save</button>
+			</div>
+		</form>
+	</div>
+</div>

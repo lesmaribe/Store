@@ -1,0 +1,44 @@
+<div class="myStoretable">
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<span class="btn btn-primary btn-xs" ng-click="sortStore('code')">Code</span>
+					<span class="mySortOrder" ng-show="propertyName === 'code'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<span class="btn btn-primary btn-xs" ng-click="sortStore('name')">Name</span>
+					<span class="mySortOrder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th>
+					<span class="btn btn-primary btn-xs" ng-click="sortStore('parent_code')">Parent Store</span>
+					<span class="mySortOrder" ng-show="propertyName === 'parent_code'" ng-class="{reverse: reverse}"></span>
+				</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="store in stores">
+				<td>{{store.code}}</td>
+				<td>{{store.name}}</td>
+				<td>{{store.parent_code}}</td>
+				<td><span class="glyphicon glyphicon-th-list btn" ng-click="editstore(store)" data-target="#editStoreModal" data-toggle="modal"></span></td>
+				<td><span class="glyphicon glyphicon-remove btn" ng-click="deletestore(store, $index)"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div>
+	<div>
+		<span class="btn btn-primary btn-sm" data-target="#createStoreModal" data-toggle="modal">Create</span>
+	</div>
+</div>
+
+<div id="editStoreModal" class="modal fade" role="dialog">
+	<div ng-include="'views/store/editStore.html'"></div>
+</div>
+
+<div id="createStoreModal" class="modal fade" role="dialog">
+	<div ng-include="'views/store/createStore.html'"></div>
+</div>
