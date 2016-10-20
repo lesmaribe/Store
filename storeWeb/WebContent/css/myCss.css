@@ -15,13 +15,13 @@
 	background-color: #85C441;
 }
 
-.myStoretable table {
+.myTable table {
 	border-collapse: collapse;
 	text-align: left;
 	width: 100%;
 }
 
-.myStoretable {
+.myTable {
 	font: normal 12px/150% Arial, Helvetica, sans-serif;
 	background: #fff;
 	overflow: hidden;
@@ -30,15 +30,15 @@
 	border-radius: 2px;
 }
 
-.myStoretable table td {
+.myTable table td {
 	padding: 3px 10px;
 }
 
-.myStoretable table th {
+.myTable table th {
 	padding: 13px;
 }
 
-.myStoretable table thead th {
+.myTable table thead th {
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #337AB7
 		), color-stop(1, #00557F));
 	background: -moz-linear-gradient(center top, #337AB7 5%, #00557F 100%);
@@ -51,22 +51,22 @@
 	border-left: 0px solid #337AB7;
 }
 
-.myStoretable table thead th:first-child {
+.myTable table thead th:first-child {
 	border: none;
 }
 
-.myStoretable table tbody td {
+.myTable table tbody td {
 	color: black;
 	border-left: 1px solid #E1EEF4;
 	font-size: 12px;
 	font-weight: normal;
 }
 
-.myStoretable table tbody td:first-child {
+.myTable table tbody td:first-child {
 	border-left: none;
 }
 
-.myStoretable table tbody tr:last-child td {
+.myTable table tbody tr:last-child td {
 	border-bottom: none;
 }
 

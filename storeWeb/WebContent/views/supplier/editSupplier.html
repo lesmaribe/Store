@@ -1,0 +1,48 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<div class="modal-title">
+        		<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Edit Supplier {{toEditSupplier.code}}</h4>
+			</div>
+		</div>
+		<form role="form" name="editForm" class="form-horizontal ng-dirty ng-valid ng-valid-required" novalidate>
+			<div class="modal-body">
+				<div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="code">Code</label>
+						<div class="col-sm-10" ng-class="{myError: editForm.code.$invalid}">
+							<input name="code" ng-disabled="true" ng-model="toEditSupplier.code" type="text" class="form-control" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="name">Name</label>
+						<div class="col-sm-10" ng-class="{myError: editForm.name.$invalid}">
+							<input name="name" ng-model="toEditSupplier.name" type="text" class="form-control ng-dirty ng-valid ng-valid-required" placeholder="supplier name" required>
+			    			<span ng-show="editForm.name.$dirty &amp;&amp; editForm.name.$invalid" class="help-inline ng-hide"><i>supplier name required</i></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="address">Address</label>
+						<div class="col-sm-10" ng-class="{myError: editForm.address.$invalid}">
+							<textarea rows="6" cols="50" name="address" ng-model="toEditSupplier.full_address" class="form-control ng-dirty ng-valid ng-valid-required" placeholder="supplier address" required></textarea>
+			    			<span ng-show="editForm.address.$dirty &amp;&amp; editForm.address.$invalid" class="help-inline ng-hide"><i>supplier address required</i></span>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="control-label col-sm-2" for="notes">Notes</label>
+						<div class="col-sm-10" ng-class="{myError: editForm.notes.$invalid}">
+							<textarea rows="6" cols="50" name="notes" ng-model="toEditSupplier.notes" class="form-control ng-dirty ng-valid ng-valid-required" placeholder="notes" required></textarea>
+			    			<span ng-show="editForm.notes.$dirty &amp;&amp; editForm.notes.$invalid" class="help-inline ng-hide"><i>please add some notes, thank you</i></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group modal-footer">
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Cancel</button>
+			    <button ng-click="saveSupplier(toEditSupplier)" ng-disabled="editForm.$invalid || editForm.$dirty == false" class="btn btn-success btn-sm ng-binding" data-dismiss="modal">Save</button>
+			</div>
+		</form>
+	</div>
+</div>

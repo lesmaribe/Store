@@ -1,0 +1,40 @@
+<div class="myTable">
+	<table>
+		<thead>
+			<tr>
+				<th>
+					<span>Code</span>
+					<span></span>
+				</th>
+				<th>
+					<span>Name</span>
+					<span></span>
+				</th>
+				<th>
+					<span>Address</span>
+					<span></span>
+				</th>
+				<th>
+					<span>Extra Notes</span>
+					<span></span>
+				</th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="supplier in suppliers">
+				<td>{{supplier.code}}</td>
+				<td>{{supplier.name}}</td>
+				<td>{{supplier.full_address}}</td>
+				<td>{{supplier.notes}}</td>
+				<td><span class="glyphicon glyphicon-th-list btn" ng-click="editSupplier(supplier)" data-target="#editSupplierModal" data-toggle="modal"></span></td>
+				<td><span class="glyphicon glyphicon-remove btn"></span></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div id="editSupplierModal" class="modal fade" role="dialog">
+	<div ng-include="'views/supplier/editSupplier.html'"></div>
+</div>
