@@ -8,3 +8,4 @@
 .settings/*
 .tern-project
 .classpath
+.project
