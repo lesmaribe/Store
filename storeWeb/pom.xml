@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oc.store</groupId>
   <artifactId>storeWeb</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.0</version>
   <packaging>war</packaging>
   <build>
     <sourceDirectory>src</sourceDirectory>
@@ -52,7 +52,7 @@
 		<dependency>
 			<groupId>com.oc.store</groupId>
   			<artifactId>storeServices</artifactId>
-  			<version>1.0.1</version>
+  			<version>1.0.0</version>
 		</dependency>
   </dependencies>
 </project>

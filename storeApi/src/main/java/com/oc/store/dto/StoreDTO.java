@@ -3,20 +3,20 @@ package com.oc.store.dto;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
-public class CompanyDTO {
+public class StoreDTO {
 
 	private int id;
 	private String code;
 	private String name;
 	
-	public CompanyDTO(){
+	public StoreDTO(){
 	}
-	public CompanyDTO(int id, String code, String name){
+	public StoreDTO(int id, String code, String name){
 		this.id = id;
 		this.code = code;
 		this.name = name;
 	}
-	public CompanyDTO(String code, String name){
+	public StoreDTO(String code, String name){
 		this.code = code;
 		this.name = name;
 	}

@@ -4,7 +4,7 @@
 
   <groupId>com.oc.store</groupId>
   <artifactId>storeServices</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <name>storeServices</name>
@@ -24,7 +24,7 @@
     <dependency>
     <groupId>com.oc.store</groupId>
   <artifactId>storeApi</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.0</version>
   </dependency>
     <dependency>
   			<groupId>javax.ws.rs</groupId>

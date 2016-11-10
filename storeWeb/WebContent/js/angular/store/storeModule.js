@@ -4,16 +4,28 @@ var storeModule = angular.module('Store.StoreModule', []);
 
 storeModule.factory('storeFactory', ['$http', function($http){
 	
-	var urlBase = 'http://localhost:8080/storeWeb-1.0.1/rest/company';
+	var urlBase = 'http://localhost:8080/storeWeb-1.0.0/rest/store';
 	var storeFactory = {};
 	
 	storeFactory.getStores = function(){
-		return $http.get(urlBase + '/' + 'companies');
+		return $http.get(urlBase + '/' + 'stores');
 	};
 	
 	storeFactory.getStore = function(code){
 		return $http.get(urlBase + '/' + code);
 	};
+	
+	storeFactory.updateStore = function(store){
+		return $http.put(urlBase, store);
+	}
+	
+	storeFactory.createStore = function(store){
+		return $http.post(urlBase, store);
+	}
+	
+	storeFactory.deleteStore = function(code){
+		return $http.delete(urlBase + '/' + code);
+	}
 	
 	return storeFactory;
 }]);
@@ -82,28 +94,35 @@ storeModule.controller('StoreCtrl', ['$scope', 'orderByFilter', 'storeFactory', 
 			alert('you can not kill a parent, store ' + store.code);
 		}else{
 			if(confirm('Are you sure you want to delete store ' + store.code + ' ?') == true){
-				console.log('deleted ' + store.code);
-				for(var key in $scope.stores){
-					if(key == store.code)
-						delete $scope.stores[key];
-				}
-				console.log('remaining stores........');
-				console.log($scope.stores);
+				storeFactory.deleteStore(store.code).then(function(response){
+					console.log('succesfully deleted the store');
+				}, function(error){
+					console.log('***error deleting store***');
+					console.log(error);
+				});
 			}
 		}
 	};
 	
 	$scope.savestore = function(editedStore){
-		console.log(editedStore);
+		storeFactory.updateStore(editedStore).then(function (response){
+			console.log("succesfully updated");
+		}, function (error){
+			console.log("***error occured during update of store***");
+			console.log(error);
+		});
 		$scope.editedStore = {};
 	};
 	
 	$scope.saveNewStore = function(name){
 		var newStore = {"id":"3", "code":"5268", "name": name};
-		$scope.stores.push(newStore);
+
+		storeFactory.createStore(newStore).then(function(response){
+			console.log('new store succesfully created');
+		}, function(error){
+			console.log('***error occured when saving new store***');
+			console.log(error);
+		});
 		name = null;
-		
-		console.log(newStore);
 	}
-	
 }]);

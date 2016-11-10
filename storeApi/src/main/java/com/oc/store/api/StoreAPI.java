@@ -13,33 +13,33 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.oc.store.dto.CompanyDTO;
+import com.oc.store.dto.StoreDTO;
 
-@Path("/company/")
-public interface CompanyAPI {
+@Path("/store/")
+public interface StoreAPI {
 	
-	@Path("/companies")
+	@Path("/stores")
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
-	public Map<String, CompanyDTO> getCompanies();
+	public Map<String, StoreDTO> getStores();
 	
 	@Path("/{code}")
 	@GET
 	@Produces({MediaType.APPLICATION_JSON})
-	public CompanyDTO getCompany(@PathParam("code") String code);
+	public StoreDTO getStore(@PathParam("code") String code);
 	
 	@POST
 	@Produces({MediaType.APPLICATION_JSON})
 	@Consumes({MediaType.APPLICATION_JSON})
-	public CompanyDTO createCompany(CompanyDTO company);
+	public StoreDTO createStore(StoreDTO store);
 	
 	@PUT
 	@Produces({MediaType.APPLICATION_JSON})
 	@Consumes({MediaType.APPLICATION_JSON})
-	public CompanyDTO updateCompany(CompanyDTO company);
+	public StoreDTO updateStore(StoreDTO store);
 	
 	@Path("/{code}")
 	@DELETE
-	public Response deleteCompany(@PathParam("code") String code);
+	public Response deleteStore(@PathParam("code") String code);
 
 }
